@@ -14,20 +14,16 @@ import org.springframework.transaction.annotation.Transactional;
 @Repository
 public class HibernateSpitterDao {
 
-    private SessionFactory sessionFactory;
-
     @Autowired
-    public HibernateSpitterDao(SessionFactory sessionFactory) {
-        this.sessionFactory = sessionFactory; // Конструирует DAO
-    }
+    private SessionFactory sessionFactory;
 
 
     @Transactional(readOnly = false)
     public void savestudent(Student student) {
        Session currentSession = sessionFactory.getCurrentSession();
-       Transaction transaction = currentSession.beginTransaction();
+      // Transaction transaction = currentSession.beginTransaction();
        currentSession.save(student);
-       transaction.commit();
+      // transaction.commit();
          // Использует текущий сеанс
     }
 

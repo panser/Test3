@@ -5,7 +5,8 @@
 	<h1>${message}</h1>
     <h3><strong>Start</strong></h3>
 <div>
-<sf:form method="post" modelAttribute="Student">
+<sf:form method="post" commandName="Student">
+
 
     <label for="login1"> Login </label>
     <sf:input path="name"  id="login1" />
