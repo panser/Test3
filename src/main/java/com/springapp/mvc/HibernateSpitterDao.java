@@ -22,7 +22,7 @@ public class HibernateSpitterDao {
     public void savestudent(Student student) {
        Session currentSession = sessionFactory.getCurrentSession();
       // Transaction transaction = currentSession.beginTransaction();
-       currentSession.save(student);
+       currentSession.saveOrUpdate(student);
       // transaction.commit();
          // Использует текущий сеанс
     }

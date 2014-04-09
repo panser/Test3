@@ -6,6 +6,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 
+
     <context:component-scan base-package="com.springapp.mvc"/>
     <context:annotation-config/>
     <tx:annotation-driven transaction-manager="transactionManager" />
@@ -28,6 +29,7 @@
                     org.springframework.orm.hibernate4.SpringSessionContext
                 </prop>
                 <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+               <prop key="hibernate.show_sql">true</prop>
             </props>
 
         </property>
@@ -35,9 +37,9 @@
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/test_student" />
+        <property name="url" value="jdbc:mysql://localhost:3306/student_test" />
         <property name="username" value="root" />
-        <property name="password" value="181987" />
+        <property name="password" value="1234" />
     </bean>
 
     <bean id="transactionManager"
